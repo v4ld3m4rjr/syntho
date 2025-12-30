@@ -1,5 +1,5 @@
-// Database Types
-export type UserRole = 'patient' | 'doctor';
+// User roles
+export type UserRole = 'patient' | 'doctor' | 'admin';
 
 export interface Profile {
     id: string;

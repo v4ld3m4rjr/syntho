@@ -11,6 +11,9 @@ import { SpravatoSession } from './pages/SpravatoSession';
 import { ClinicalAssessments } from './pages/ClinicalAssessments';
 import { DoctorDashboard } from './pages/DoctorDashboard';
 import { PatientView } from './pages/PatientView';
+import { DonationPage } from './pages/DonationPage';
+import { AdminDashboard } from './pages/AdminDashboard';
+import { ScientificStats } from './pages/ScientificStats';
 
 function App() {
     console.log('App component rendering');
@@ -65,10 +68,26 @@ function App() {
                             <>
                                 <Route path="/doctor" element={<DoctorDashboard />} />
                                 <Route path="/patient/:patientId" element={<PatientView />} />
+                                <Route path="/statistics" element={<ScientificStats />} />
                                 <Route path="/dashboard" element={<Dashboard />} />
                                 <Route path="/" element={<Navigate to="/doctor" replace />} />
                             </>
                         )}
+
+                        {/* Admin Routes */}
+                        {profile.role === 'admin' && (
+                            <>
+                                <Route path="/admin" element={<AdminDashboard />} />
+                                <Route path="/statistics" element={<ScientificStats />} />
+                                <Route path="/doctor" element={<DoctorDashboard />} />
+                                <Route path="/patient/:patientId" element={<PatientView />} />
+                                <Route path="/dashboard" element={<Dashboard />} />
+                                <Route path="/" element={<Navigate to="/admin" replace />} />
+                            </>
+                        )}
+
+                        {/* Shared Routes (all roles) */}
+                        <Route path="/doacao" element={<DonationPage />} />
 
                         {/* Fallback */}
                         <Route path="*" element={<Navigate to="/" replace />} />
