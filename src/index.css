@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+  
+  .btn-secondary {
+    @apply bg-slate-200 hover:bg-slate-300 dark:bg-slate-700 dark:hover:bg-slate-600 text-slate-900 dark:text-slate-100 font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+  }
+  
+  .card {
+    @apply bg-white dark:bg-slate-800 rounded-xl shadow-md p-6 border border-slate-200 dark:border-slate-700;
+  }
+  
+  .alert-success {
+    @apply bg-medical-success/10 border border-medical-success/20 text-medical-success rounded-lg p-4;
+  }
+  
+  .alert-warning {
+    @apply bg-medical-warning/10 border border-medical-warning/20 text-medical-warning rounded-lg p-4;
+  }
+  
+  .alert-danger {
+    @apply bg-medical-danger/10 border border-medical-danger/20 text-medical-danger rounded-lg p-4;
+  }
+  
+  .alert-info {
+    @apply bg-medical-info/10 border border-medical-info/20 text-medical-info rounded-lg p-4;
+  }
+}
